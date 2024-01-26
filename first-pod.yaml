@@ -1,0 +1,12 @@
+kind: Pod
+apuiVersion: v1 
+metadeta:
+    name: first-pod
+
+spec:
+    containers:
+        name: conatiner-1
+        image: shoaib/firstdocker-app
+        imagePullPolicy: IfNotPresent
+        ports:
+            containerPort: 80

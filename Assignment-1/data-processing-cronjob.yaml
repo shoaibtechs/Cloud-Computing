@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: data-processing-cronjob
+spec:
+  schedule: "*/15 * * * *" # Cron expression for every 15 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: data-processor
+            image: your-data-processor-image:tag
+            # Add any necessary environment variables, volume mounts, etc.
+          restartPolicy: OnFailure
